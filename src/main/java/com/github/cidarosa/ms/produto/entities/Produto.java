@@ -1,5 +1,6 @@
 package com.github.cidarosa.ms.produto.entities;
 
+import com.github.cidarosa.ms.produto.service.CategoriaService;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -19,6 +20,11 @@ public class Produto {
     private String descricao;
     private Double valor;
 
+
+    @ManyToOne
+    @JoinColumn(name = "categoria_id", nullable = false)
+
+        private Categoria categoria;
 
 
 }
